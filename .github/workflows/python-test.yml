@@ -38,7 +38,7 @@ jobs:
 
       - name: Run tests and generate HTML report
         run: |
-          pytest --html=report.html test_calculator.py
+          pytest --html=report.html app/test_calculator.py
 
       - name: Upload HTML report
         uses: actions/upload-artifact@v3
