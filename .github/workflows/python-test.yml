@@ -1,4 +1,4 @@
-name: Python package
+name: Python Tests
 
 on: 
   push:
@@ -36,6 +36,12 @@ jobs:
           path: htmlcov/
 
 
-      - name: Run tests
+      - name: Run tests and generate HTML report
         run: |
-          pytest
+          pytest --html=report.html test_calculator.py
+
+      - name: Upload HTML report
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-report
+          path: report.html
