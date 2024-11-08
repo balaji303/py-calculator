@@ -1,6 +1,7 @@
 # py-calculator
 This is an example for Github Actions
 
+[![Python Tests](https://github.com/balaji303/py-calculator/actions/workflows/python-test.yml/badge.svg)](https://github.com/balaji303/py-calculator/actions/workflows/python-test.yml)
 
 ## How to create requirements.txt file
 
