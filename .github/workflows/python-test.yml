@@ -45,6 +45,12 @@ jobs:
         with:
           name: test-report
           path: report.html
+
+      - name: Upload HTML assert
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-report
+          path: assets/style.css
           
       # - name: Run tests and generate coverage report1
       #   run: |
