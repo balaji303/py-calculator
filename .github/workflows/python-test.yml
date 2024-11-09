@@ -46,11 +46,12 @@ jobs:
           name: test-report
           path: report.html
 
-      - name: Upload HTML assert
+      - name: Upload assets folder
         uses: actions/upload-artifact@v3
         with:
-          name: test-report
-          path: assets/style.css
+          name: assets
+          path: assets/
+
           
       # - name: Run tests and generate coverage report1
       #   run: |
