@@ -2,6 +2,7 @@
 This is an example for Github Actions
 
 [![Python Tests](https://github.com/balaji303/py-calculator/actions/workflows/python-test.yml/badge.svg)](https://github.com/balaji303/py-calculator/actions/workflows/python-test.yml)
+[![codecov](https://codecov.io/gh/balaji303/py-calculator/graph/badge.svg?token=pS9BQUtSBP)](https://codecov.io/gh/balaji303/py-calculator)
 
 ## How to create requirements.txt file
 
