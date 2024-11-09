@@ -46,12 +46,12 @@ jobs:
           name: test-report
           path: report.html
           
-      - name: Run tests and generate coverage report1
-        run: |
-          pytest app/test_calculator.py --cov=app.calculator --cov-report=html
+      # - name: Run tests and generate coverage report1
+      #   run: |
+      #     pytest app/test_calculator.py --cov=app.calculator --cov-report=html
 
-      - name: Upload coverage report1
-        uses: actions/upload-artifact@v3
-        with:
-          name: coverage-report1
-          path: htmlcov/
+      # - name: Upload coverage report1
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: coverage-report1
+      #     path: htmlcov/
