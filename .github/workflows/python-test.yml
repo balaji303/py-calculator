@@ -1,5 +1,6 @@
-name: Python Tests by @balaji303
+name: Calculator Tests by @balaji303
 
+# Trigger Pipeline on these conditions
 on: 
   push:
     branches:
@@ -10,39 +11,35 @@ on:
 
 jobs:
   test:
+    #Environment is based on Ubuntu
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout the repo
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
+          
+      #Set up python on the environment
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
+      # Install dependencies
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pytest pytest-cov
           
-      # - name: Run tests and generate coverage report2
-      #   run: |
-      #     pytest pytest app/test_calculator.py --cov=calculator --cov-report=html
-
-      # - name: Upload coverage report2
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: coverage-report2
-      #     path: htmlcov/
-
+      # Run pytest on test_calculator.py and generate report
       - name: Run tests and generate HTML report
         run: |
           pytest --html=report.html app/test_calculator.py
 
+      # Upload the test report as artifact
       - name: Upload HTML report
         uses: actions/upload-artifact@v4
         with:
@@ -51,28 +48,13 @@ jobs:
             report.html
             assets/
 
+      # Run test for CodeCov
       - name: Run tests
         run: |
           pytest --cov --cov-report=xml
 
+      # Upload result to Codecov using Tokens
       - name: Upload results to Codecov
         uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-
-      # - name: Upload assets folder
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: assets
-      #     path: assets/
-
-          
-      # - name: Run tests and generate coverage report1
-      #   run: |
-      #     pytest app/test_calculator.py --cov=app.calculator --cov-report=html
-
-      # - name: Upload coverage report1
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: coverage-report1
-      #     path: htmlcov/

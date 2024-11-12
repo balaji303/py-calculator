@@ -1,4 +1,5 @@
 #This is the file used to test calculator.py
+# Function names with "test_" are called by pytest lib
 
 from calculator import *
 
