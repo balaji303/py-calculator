@@ -14,7 +14,7 @@ This is an example for Github Actions
 ## To Create HTML report in your local PC
 1. pytest --html=report.html test_calculator.py
 
-
+```
 name: Python Tests
 
 on: 
@@ -52,3 +52,4 @@ jobs:
         with:
           name: test-report
           path: report.html
+```
