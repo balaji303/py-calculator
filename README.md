@@ -12,8 +12,9 @@ This is an example for Github Actions
 4. Run this command `pip install -r requirements. txt`
 
 ## To Create HTML report in your local PC
-1. pytest --html=report.html test_calculator.py
+1. `pytest --html=report.html test_calculator.py`
 
+## Overview of the YAML file to run Github Actions
 ```
 name: Python Tests
 
