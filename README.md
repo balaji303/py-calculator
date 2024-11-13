@@ -7,9 +7,9 @@ This is an example for Github Actions
 ## How to create requirements.txt file
 
 1. Create requirements.in file and add the library
-2. Run this command 'python -m piptools compile requirements.in'
+2. Run this command `python -m piptools compile requirements.in`
 3. requirements.txt file is created
-4. 'pip install -r requirements. txt'
+4. Run this command `pip install -r requirements. txt`
 
 ## To Create HTML report in your local PC
 1. pytest --html=report.html test_calculator.py
